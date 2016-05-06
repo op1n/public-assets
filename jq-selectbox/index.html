@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+	<head>
+		<title>jQuery SelectBox plugin</title>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<link href="css/jquery.selectbox.css" type="text/css" rel="stylesheet" />
+	</head>
+	<body>
+
+		<p>View API and more demos at: <a href="http://www.bulgaria-web-developers.com/projects/javascript/selectbox/">jQuery SelectBox plugin v0.2</a></p>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<div id="first-blank-wrapper">
+		<select name="country_id" id="country_id" tabindex="1">
+		<option value="" selected="selected" style="display: none;">___________</option>
+			<option value="86">aunt</option>
+			<option value="77">best friend</option>
+			<option value="78">bestie</option>
+			<option value="71">brother</option>
+			<option value="164">child</option>
+			<option value="83">colleague</option>
+			<option value="73">cousin</option>
+			<option value="70">dad</option>
+			<option value="74">daughter</option>
+			<option value="76">friend</option>
+			<option value="84">husband</option>
+			<option value="69">mom</option>
+			<option value="81">nephew</option>
+			<option value="80">niece</option>
+			<option value="165">partner</option>
+			<option value="72">sister</option>
+			<option value="75">son</option>
+			<option value="160">stepbrother</option>
+			<option value="166">stepchild</option>
+			<option value="161">stepdad</option>
+			<option value="162">stepmom</option>
+			<option value="163">stepsister</option>
+			<option value="87">uncle</option>
+			<option value="85">wife</option>
+		</select>
+		</div><br><br>
+<!--
+		<button onclick="$('#country_id').selectbox('change', 'stepsister', 'stepsister' );">change</button>
+		<button onclick="$('.sbHolder .sbSelector').fadeOut(800);">fade out</button>
+		<button onclick="$('.sbHolder .sbSelector').fadeIn(800);">fade in</button>
+		<button id="rotate-button" onclick="rotator();">rotate</button>
+		<button onclick="$('#rotate-button').trigger('click');">click rotate</button>
+		<button onclick="$('#country_id').toggle();">click native select</button>
+-->
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.selectbox-0.2.js"></script>
+		<script type="text/javascript">
+
+
+		$("#country_id").selectbox();
+		$('.sbHolder .sbSelector').html('<span id="select-text">child</span>'); //set an inner span to play with
+			rotator();
+		function rotator(previous) {
+			var options = document.getElementById("country_id");
+			var items = [];
+			for (var i = 0; i < options.length; i++) {
+				items.push(options[i].text);
+			}
+			items.shift(); //remove first item...we don't want to show it in fader
+			// check for previous if(previous) {
+				items = $.grep(items, function(value) {
+				  return value != previous;
+				});
+			//var items = Array('aunt','best friend','your mom','her mom','my mom');
+			var item = items[Math.floor(Math.random()*items.length)];
+			$('#select-text').fadeOut(300, function(){
+				$('#select-text').html(item);
+				$('#select-text').fadeIn(300,function(){
+					setTimeout(function(){
+						rotator(item);
+					}, 1000);
+				});
+			});
+
+		};
+
+
+
+
+		</script>
+	</body>
+</html>

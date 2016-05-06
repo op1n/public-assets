@@ -1,0 +1,80 @@
+@CHARSET "UTF-8";
+.sbHolder{
+	background-color: #transparent;
+	font-family: "helvetica neue", helvetica, arial, sans-serif;
+	font-size: 60px;
+	font-weight: bold;
+	height: 60px;
+	position: relative;
+	width: 900px;
+}
+.sbHolder:focus,
+.sbHolder:focus .sbSelector{
+	color: #000;
+	outline: none;
+	text-decoration: none;
+	outline-color: transparent;
+	outline-style: none;
+}
+.sbSelector{
+	display: block;
+	height: 60px;
+	left: 0;
+	line-height: 60px;
+	outline: none;
+
+	position: absolute;
+	text-indent: 10px;
+	top: 0;
+	width: 100%;
+}
+.sbSelector:link, .sbSelector:visited, .sbSelector:hover{
+	color: #000;
+	outline: none;
+	text-decoration: none;
+	outline-color: transparent;
+	outline-style: none;
+}
+.sbToggle{
+	display:none;
+}
+
+.sbOptions{
+
+	background-color: #fff;
+	border: solid 2px #515151;
+	list-style: none;
+	left: -1px;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 30px;
+	max-width: 600px;
+	z-index: 1;
+	overflow-y: auto;
+	font-size:30px;
+}
+.sbOptions li:first-child{
+	display:none;
+}
+.sbOptions li{
+	padding: 0 7px;
+}
+.sbOptions a{
+	display: block;
+	outline: none;
+	padding: 7px 0 7px 3px;
+}
+.sbOptions a:link, .sbOptions a:visited{
+	color:#000;
+	text-decoration: none;
+}
+.sbOptions a:hover,
+.sbOptions a:focus,
+.sbOptions a.sbFocus{
+	color:#fff;
+	background-color:#4682B4;
+}
+.sbOptions li.last a{
+	border-bottom: none;
+}
